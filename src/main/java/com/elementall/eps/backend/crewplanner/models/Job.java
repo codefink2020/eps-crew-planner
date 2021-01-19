@@ -35,6 +35,8 @@ public class Job {
     @ManyToMany
     private List<Employee> plannedEmployees;
     @OneToOne
+
+    @JsonView({JsonViews.JobList.class, JsonViews.AllJob.class})
     private Employee ownCrewChief;
     @OneToOne
     private Customer customer;
